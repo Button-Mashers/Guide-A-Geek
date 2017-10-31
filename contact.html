@@ -31,12 +31,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-push-7 phone-preview">
-                    <div class="iphone-mockup"></div>
                 </div>
                 <div class="col-md-6 col-md-pull-3 get-it">
                     <h1>NEED SOME HELP? </h1>
                     <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                    <p><a class="btn btn-primary btn-lg" role="button" href="#"> Suggestions?</a><a class="btn btn-success btn-lg" role="button" href="#"> Kudos?</a></p>
+                    <p><a class="btn btn-primary btn-lg" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" role="button" href="#"> Suggestions?</a><a class="btn btn-success btn-lg" role="button" href="#"> Kudos?</a></p>
                 </div>
             </div>
         </div>
@@ -78,6 +77,33 @@
                     <h5>Guide-A-Geek © 2017</h5></div>
                 <div class="col-sm-6 social-icons"></div>
             </div>
+        </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Send Us Some Info</h4>
+                  </div>
+                  <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <label for="recipient-name" class="control-label">How important is this to you? </label>
+                            <input type="text" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="form-group">
+                            <label for="message-text" class="control-label">Your Suggestion</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit Your Ideas</button>
+                  </div>
+                </div>
+              </div>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
