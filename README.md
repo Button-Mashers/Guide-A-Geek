@@ -1,1 +1,1 @@
-# Guide-A-Geek
+Basic Youtube Search API using getJSON Ajax Method
