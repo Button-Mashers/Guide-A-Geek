@@ -2,16 +2,44 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Blog - Express</title>
+  <title>Guide-A-Geek</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/user.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/youtube.js"></script>
 </head>
 
 <body>
+  <header>
+      <nav class="navbar navbar-default">
+          <div class="container">
+              <div class="navbar-header"><a class="navbar-brand navbar-link" href="dashboard.html"><span class="text-title">GUIDE-A-Geek </span></a>
+                  <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+              </div>
+                  <div class="collapse navbar-collapse" id="navcol-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="active" role="presentation"><a href="/dashboard">Blog</a></li>
+                      <li role="presentation"><a href="/signup">Login/Signup </a></li>
+                      <li role="presentation"><a href="contact.html">Help</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+
+
+
   <div class="container">
+    <div class="row">
+      <div class="scrollmenu" id="search-results"></div>
+    </div>
     <div class="row top-30">
       <div class="col-md-4">
         <div class="form-group">
