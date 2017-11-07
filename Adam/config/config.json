@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "JawsDB",
+    "host": "localhost",
+    "dialect": "mysql",
+    "Port" : 3306
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+    "database": "JawsDB",
+    "host": "localhost",
+    "dialect": "mysql",
+    "Port" : 3306
+  },
+  "production": {
+    "username": "root",
+    "password": "root",
+    "database": "JawsDB",
+    "host": "localhost",
+    "dialect": "mysql",
+    "Port" : 3306
+  }
+}
