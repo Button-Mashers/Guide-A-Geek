@@ -1,14 +1,10 @@
 $(document).ready(function() {
 
-  $('#search-term').submit(function(event) {
+var searchTerm = "Assassins Creed Origins";
 
-    event.preventDefault();
- 
-    var searchTerm = $('#query').val()
-    console.log(searchTerm)
-   
-    getRequest(searchTerm);
-  })
+    console.log(searchTerm);
+
+
 
 
   var getRequest = function(searchTerm) {
@@ -18,6 +14,8 @@ $(document).ready(function() {
       part: 'snippet',
 
       key: 'AIzaSyD7beeskMiAH3aGuOyURD06SuubXkNHmx8',
+
+      maxResults: 20,
 
       q: searchTerm
     }
@@ -32,6 +30,8 @@ $(document).ready(function() {
       showResults(resultsArray);
     })
   }
+
+      getRequest(searchTerm);
 
 
   var showResults = function(results) {
