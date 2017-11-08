@@ -1,20 +1,20 @@
 var express = require('express');
-var fs = require('fs');
-var axios = require('axios');
 var request = require('request-promise');
 var cheerio = require('cheerio');
 var app = express();
 var port = process.env.PORT || 8080;
 
-// app.get('/scrape', function(req, res) {
 	var obj = {
 		scrape: function() {
-			var url = 'https://news.google.com/news/explore/section/q/Assassin%27s%20Creed%3A%20Origins/Assassin%27s%20Creed%3A%20Origins?ned=us&hl=en&gl=US';
-			request(url) 
-			.then(function(error, response, html) {
-				if(!error) {
-					var $ = cheerio.load(html);
+			var options = {
+				uri: 'https://news.google.com/news/explore/section/q/Assassin%27s%20Creed%3A%20Origins/Assassin%27s%20Creed%3A%20Origins?ned=us&hl=en&gl=US',
+				transform: function(body) {
+					return cheerio.load(body);
+				}
+			}
 
+			return request(options) 
+			.then(function($) {
 					var text = [];
 					var articleLink = [];
 					var image = [];
@@ -34,12 +34,8 @@ var port = process.env.PORT || 8080;
 
 					console.log(news);
 					return news;
-				}
-				else {
-					console.log(error);
-				}
 			})
 		}
 	}
-// });
+
 module.exports = obj;

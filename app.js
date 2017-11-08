@@ -6,20 +6,24 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
-var fs = require('fs');
-var request = require('request-promise');
-var cheerio = require('cheerio');
 //var methodOverride = require('method-override');
 var session = require('express-session');
 var app = express();
 var mysql      = require('mysql');
 var bodyParser=require("body-parser");
-var connection = mysql.createConnection({
-              host     : 'localhost',
-              user     : 'root',
-              password : 'root',
-              database : 'some_db'
-            });
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    port: 3306,
+    host: "localhost",
+    user: "root",
+    password: "Musashi3",
+    database: "user_auth_blog"
+  });
+}
+
 var PORT = process.env.PORT || 8080;
  
 connection.connect();
@@ -42,7 +46,7 @@ app.use(session({
  
 // development only
  
-// app.get('/', routes.newsfeed);//call for main index page
+app.get('/', routes.index);//call for main index page
 app.get('/signup', user.signup);//call for signup page
 app.post('/signup', user.signup);//call for signup post 
 app.get('/login', routes.index);//call for login page

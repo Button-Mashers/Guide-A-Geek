@@ -7,17 +7,20 @@
 
 // Requiring our Todo model
 var db = require("../models");
-var obj = require('./wiki-server.js');
+var obj = require('./scraper.js');
+
 // Routes
 // =============================================================
 module.exports = function(app) {
 
+  // GET route for getting scrape data
   app.get("/scrape", function(req, res) {
       var news = obj.scrape();
-      console.log(news);
+      news.then(function(news) {
+        console.log(news);
+        res.send(news);
+      });
   });
-    // setTimeout(function() {console.log(news)}, 5000);
-    // });
 
   // GET route for getting all of the posts
   app.get("/api/posts/", function(req, res) {
