@@ -11,19 +11,12 @@ var session = require('express-session');
 var app = express();
 var mysql      = require('mysql');
 var bodyParser=require("body-parser");
-
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection({
-    port: 3306,
-    host: "localhost",
-    user: "root",
-    password: "Musashi3",
-    database: "user_auth_blog"
-  });
-}
-
+var connection = mysql.createConnection({
+              host     : 'localhost',
+              user     : 'root',
+              password : 'Musashi3',
+              database : 'user_auth_blog'
+            });
 var PORT = process.env.PORT || 8080;
  
 connection.connect();
