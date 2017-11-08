@@ -7,11 +7,22 @@
 
 // Requiring our Todo model
 var db = require("../models");
+var obj = require('./scraper.js');
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
+    // GET route for getting scrape data
+  app.get("/scrape", function(req, res) {
+      var news = obj.scrape();
+      news.then(function(news) {
+        console.log(news);
+        res.send(news);
+      });
+  });
+
+  
   // GET route for getting all of the posts
   app.get("/api/posts/", function(req, res) {
     db.Post.findAll({})
