@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Musashi3",
+    "password": "none",
     "database": "user_auth_blog",
     "host": "localhost",
     "dialect": "mysql"
