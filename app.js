@@ -18,7 +18,7 @@ if (process.env.JAWSDB_URL) {
     port: 3306, 
     host: "localhost", 
     user: "root", 
-    password: "Musashi3", 
+    password: "none", 
     database: "user_auth_blog" 
   }); 
 }
